@@ -1,0 +1,50 @@
+# Ignore build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore object files
+*.o
+*.obj
+
+# Ignore dependency files
+*.d
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.temp
+*~
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore Java class files
+*.class
+
+# Ignore C/C++ build directories
+build/
+Debug/
+Release/
+
+# Ignore CMake build directories
+cmake-build-*/
+
+# Ignore Python virtual environment
+.venv/
+venv/
