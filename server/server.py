@@ -48,9 +48,10 @@ def generate_challenge():
     """
     public_key = load_client_public_key()
     nonce = generate_nonce()
+    print("Nonce (hex) antes da criptografia:", nonce.hex())
     encrypted_nonce = encrypt_challenge(nonce, public_key)
 
-    print("\n======== Challenge gerado e enviado ao cliente ========")
+    print("\n=== Challenge gerado e enviado ao cliente ===")
     print(encrypted_nonce)
     return nonce
 
@@ -74,9 +75,9 @@ def validate_response(original_nonce, client_response):
         client_response (bytes): A resposta do cliente decodificada.
     """
     if original_nonce == client_response:
-        print("\n AUTENTICADO!")
+        print("\nAUTENTICADO!")
     else:
-        print("\n FALHA: Resposta não corresponde ao nonce original.")
+        print("\nFALHA: Resposta não corresponde ao nonce original.")
 
 def main():
     """

@@ -15,11 +15,20 @@ def load_client_private_key():
     return key
 
 def decrypt_challenge(encrypted_b64, private_key):
+    """
+    Decifra o challenge criptografado usando a chave privada.
+    
+    Args:
+        encrypted_b64 (str): O challenge criptografado em Base64.
+        private_key (RSA key object): A chave privada do cliente.
+    
+    Returns:
+        bytes: O nonce decifrado.
+    """
     # Remove quebras de linha e espaços extras
     encrypted_b64 = "".join(encrypted_b64.split())
     encrypted_bytes = base64.b64decode(encrypted_b64)
     
-    from Crypto.Cipher import PKCS1_v1_5
     cipher = PKCS1_v1_5.new(private_key)
     sentinel = None
     decrypted = cipher.decrypt(encrypted_bytes, sentinel)
