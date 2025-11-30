@@ -10,7 +10,7 @@ def load_client_public_key():
     Returns:
         RSA key object: A chave pública do cliente.
     """
-    path = "../keys/client_public.pem"
+    path = "keys/client_public.pem"
     with open(path, "rb") as f:
         key = RSA.import_key(f.read())
     return key
@@ -52,8 +52,6 @@ def generate_challenge():
 
     print("\n======== Challenge gerado e enviado ao cliente ========")
     print(encrypted_nonce)
-    print("========================================================")
-
     return nonce
 
 def get_client_response():
