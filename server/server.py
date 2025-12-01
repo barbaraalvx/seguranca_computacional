@@ -75,9 +75,9 @@ def validate_response(original_nonce, client_response):
         client_response (bytes): A resposta do cliente decodificada.
     """
     if original_nonce == client_response:
-        print("\nAUTENTICADO!")
+        print("AUTENTICADO!")
     else:
-        print("\nFALHA: Resposta não corresponde ao nonce original.")
+        print("FALHA: Resposta não corresponde ao nonce original.")
 
 def main():
     """
@@ -88,6 +88,7 @@ def main():
 
     print("\n=== Aguardando resposta do cliente... ===\n")
     client_response = get_client_response()
+    print("Resposta convertida (hex):", client_response.hex())
 
     print("\n=== Validando resposta do cliente... ===\n")
     validate_response(original_nonce, client_response)
